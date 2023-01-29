@@ -1,8 +1,8 @@
 import { createApp, App } from 'vue';
-import HButton from './HButton';
-import HSFCButton from './SFCButton/index.vue';
-import HJSXButton from './JSXButton';
+import Button from './Button';
+import SFCButton from './SFCButton/index.vue';
+import JSXButton from './JSXButton';
 
-const app = createApp(HJSXButton)
+const app = createApp(JSXButton)
 
 app.mount('#app')

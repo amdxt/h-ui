@@ -22,15 +22,15 @@
       };
 
       import HUI, {
-        HButton,
-        HSFCButton,
-        HJSXButton,
+        Button,
+        SFCButton,
+        JSXButton,
       } from '../../dist/h-ui.mjs';
 
       createApp(App)
-        .component(HButton.name, HButton)
-        .component(HJSXButton.name, HJSXButton)
-        .component(HSFCButton.name, HSFCButton)
+        .component(Button.name, Button)
+        .component(JSXButton.name, JSXButton)
+        .component(SFCButton.name, SFCButton)
         .mount('#app');
     </script>
   </body>

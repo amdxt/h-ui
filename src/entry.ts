@@ -1,16 +1,16 @@
 import { createApp, App } from 'vue';
-import HButton from './HButton';
-import HJSXButton from './JSXButton';
-import HSFCButton from './SFCButton/index.vue';
+import Button from './Button';
+import JSXButton from './JSXButton';
+import SFCButton from './SFCButton/index.vue';
 
 // 单独导出
-export { HButton, HSFCButton, HJSXButton };
+export { Button, JSXButton, SFCButton };
 
 // 全量导出
 export default {
   install(app: App): void {
-    app.component(HButton.name, HButton);
-    app.component(HJSXButton.name, HJSXButton);
-    app.component(HSFCButton.name, HSFCButton);
+    app.component(Button.name, Button);
+    app.component(JSXButton.name, JSXButton);
+    app.component(SFCButton.name, SFCButton);
   },
 };
