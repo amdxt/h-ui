@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>esm-all</title>
+    <link rel="stylesheet" href="../../dist/entry.css" >
   </head>
   <body>
     <h1>esm-all</h1>
@@ -12,11 +13,11 @@
 
     <script type="module">
       // vue.esm-bundler.js 这个版本才能使用 template option
-      import { createApp } from "vue/dist/vue.esm-bundler.js";
+      import { createApp } from "vue";
 
       const App = {
         template: `
-            <HButton />
+            <HButton icon="edit" color="green"></HButton>
             <HJSXButton />
             <HSFCButton />
             `,
