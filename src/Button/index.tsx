@@ -5,4 +5,5 @@ Button.install = (app: App) => {
     app.component(Button.name, Button)
 }
 
+// test lint staged
 export default Button
