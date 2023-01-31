@@ -1,25 +1,34 @@
-import { defineComponent, h, PropType } from 'vue';
-import "uno.css";
+import { defineComponent, h, PropType } from 'vue'
+import 'uno.css'
 
-export type IColor = 'black' | 'gray' | 'red' | 'yellow' | 'green'|'blue'|'indigo'|'purple'|'pink'
+export type IColor =
+    | 'black'
+    | 'gray'
+    | 'red'
+    | 'yellow'
+    | 'green'
+    | 'blue'
+    | 'indigo'
+    | 'purple'
+    | 'pink'
 export const props = {
-  color: {
-    type: String as PropType<IColor>,
-    default: 'blue'  // 设定默认颜色
-  },
-  icon: {
-    type: String as PropType<string>,
-    default: ''  // 设定默认颜色
-  },
+    color: {
+        type: String as PropType<IColor>,
+        default: 'blue', // 设定默认颜色
+    },
+    icon: {
+        type: String as PropType<string>,
+        default: '', // 设定默认颜色
+    },
 }
 
 export default defineComponent({
-  name: 'HButton',
-  props,
-  setup(props, { slots }) {
-    return () => (
-      <button
-        class={`
+    name: 'HButton',
+    props,
+    setup(props, { slots }) {
+        return () => (
+            <button
+                class={`
       py-2 
       px-4 
       font-semibold 
@@ -31,11 +40,15 @@ export default defineComponent({
       border-none 
       cursor-pointer 
       `}
-      >
-        {props.color ? <i class={`i-ic-baseline-${props.icon} p-3`}></i> : '' }
-        
-        {slots.default ? slots.default() : ''}
-      </button>
-    );
-  },
-});
+            >
+                {props.color ? (
+                    <i class={`i-ic-baseline-${props.icon} p-3`}></i>
+                ) : (
+                    ''
+                )}
+
+                {slots.default ? slots.default() : ''}
+            </button>
+        )
+    },
+})
