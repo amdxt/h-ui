@@ -30,6 +30,6 @@ describe('Button', () => {
 
         const text = wrapper.text()
         const classList = wrapper.classes()
-        expect(classList.includes('bg-red-500')).toBeTruthy()   
+        expect(classList.includes('bg-red-500')).toBeTruthy()
     })
 })
