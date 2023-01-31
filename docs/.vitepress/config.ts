@@ -68,6 +68,7 @@ const config = {
     siteTitle: 'HUI',
   },
   markdown: {
+    lineNumbers: true,
     config: (md) => {
       // 添加DemoBlock插槽
       md.use(demoBlockPlugin);
