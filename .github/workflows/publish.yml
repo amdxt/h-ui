@@ -1,15 +1,14 @@
-name: Public Npm
+name: Publish Npm
 
 on:
   push:
-    branches: [ publish ]
-
+    branches: [publish]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
 
-    name: 'publish npm'
+    name: "publish npm"
 
     environment: npm
 
@@ -20,13 +19,14 @@ jobs:
           version: 6.17.0
       - name: Install modules
         run: pnpm install
-      - name: Build 
-        run: pnpm run build 
-      - name: 'Publish to the npm registry'
+      - name: Build
+        run: pnpm run build
+      - name: "Publish to the npm registry"
         uses: primer/publish@3.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # 跟前面步骤中的 NPM_AUTH_TOKEN 保持一致
         with:
-          default_branch: 'publish'
+          default_branch: "publish"
           dir: ""
+          npm_args: "--unsafe-perm --allow-same-version"
