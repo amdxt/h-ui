@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
 const vue = require("vue");
+const __uno = "";
 const props = {
   color: {
     type: String,
@@ -13,7 +14,7 @@ const props = {
     // 设定默认颜色
   }
 };
-const Button = /* @__PURE__ */ vue.defineComponent({
+const Button$2 = /* @__PURE__ */ vue.defineComponent({
   name: "HButton",
   props,
   setup(props2, {
@@ -37,16 +38,18 @@ const Button = /* @__PURE__ */ vue.defineComponent({
     }, null) : "", slots.default ? slots.default() : ""]);
   }
 });
-const __uno = "";
-Button.install = (app) => {
-  app.component(Button.name, Button);
+Button$2.install = (app) => {
+  app.component(Button$2.name, Button$2);
 };
-const JSXButton = /* @__PURE__ */ vue.defineComponent({
+const Button$1 = /* @__PURE__ */ vue.defineComponent({
   name: "HJSXButton",
   render() {
     return vue.createVNode("button", null, [vue.createTextVNode("jsx-button")]);
   }
 });
+Button$1.install = (app) => {
+  app.component(Button$1.name, Button$1);
+};
 const _export_sfc = (sfc, props2) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props2) {
@@ -58,18 +61,21 @@ const _sfc_main = {
   name: "HSFCButton"
 };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return vue.openBlock(), vue.createElementBlock("button", null, "sfc-button");
+  return vue.openBlock(), vue.createElementBlock("span", null, "sfc button");
 }
-const SFCButton = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+const Button = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+Button.install = (app) => {
+  app.component(Button.name, Button);
+};
 const entry = {
   install(app) {
+    app.component(Button$2.name, Button$2);
+    app.component(Button$1.name, Button$1);
     app.component(Button.name, Button);
-    app.component(JSXButton.name, JSXButton);
-    app.component(SFCButton.name, SFCButton);
   }
 };
-exports.Button = Button;
-exports.JSXButton = JSXButton;
-exports.SFCButton = SFCButton;
+exports.Button = Button$2;
+exports.JSXButton = Button$1;
+exports.SFCButton = Button;
 exports.default = entry;
 //# sourceMappingURL=h-ui.cjs.js.map

@@ -1,7 +1,7 @@
 import { createApp, App } from 'vue'
 import Button from './Button'
 import JSXButton from './JSXButton'
-import SFCButton from './SFCButton/index.vue'
+import SFCButton from './SFCButton'
 
 // 单独导出
 export { Button, JSXButton, SFCButton }

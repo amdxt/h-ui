@@ -1,6 +1,6 @@
 import { createApp, App } from 'vue'
 import Button from './Button'
-import SFCButton from './SFCButton/index.vue'
+import SFCButton from './SFCButton/SFCButton.vue'
 import JSXButton from './JSXButton'
 import HUI from './entry'
 

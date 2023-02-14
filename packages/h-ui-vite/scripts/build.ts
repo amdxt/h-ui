@@ -3,14 +3,25 @@ console.log('====start to build:all =====')
 import * as fs from 'fs-extra'
 import * as path from 'path'
 import { config } from '../vite.config'
-import { build, InlineConfig, defineConfig, UserConfig } from 'vite'
-const buildAll = async () => {
+import {
+    build,
+    InlineConfig,
+    defineConfig,
+    UserConfig,
+    mergeConfig,
+} from 'vite'
+import { merge } from 'lodash'
+
+const buildEntry = async () => {
+    // 全量打包 build:entry
+    // await build(config)
+    await build()
+}
+
+const buildSplit = async () => {
     // const inline: InlineConfig =
     //   viteConfig;
-
-    // 全量打包 build:entry
-    // await build(defineConfig(config as UserConfig) as InlineConfig)
-    await build()
+    await buildEntry()
 
     const baseOutDir = config!.build!.outDir as string
 
@@ -43,26 +54,26 @@ const buildAll = async () => {
         return isDir && fs.readdirSync(componentDir).includes('index.ts')
     })
     console.log('===识别到的组件有:', componentsDir)
+
     // forEach中异步执行有问题 改为for-of
     for (let name of componentsDir) {
         console.log(`===开始打包组件: ${name}`)
         const outDir = path.resolve(baseOutDir, name)
         const customBuildOptions = {
             lib: {
-                entry: path.resolve(srcDir, name),
-                formats: [`es`],
-                fileName: (fmt: string, entryName: string) => {
-                    return `index.${fmt}.js`
-                }, // 导出的模块格式
+                entry: path.resolve(srcDir, name, 'index.ts'),
                 name, // 导出模块名
             },
             outDir,
         }
 
-        Object.assign(config.build as any, customBuildOptions)
-        console.log(config)
-        console.log(config.build!.lib!.formats)
-        await build(defineConfig(config as UserConfig) as InlineConfig)
+        // Object.assign(config.build as any, customBuildOptions)
+        // const curConfig = merge({}, config, { build: customBuildOptions })
+        const curConfig = mergeConfig(config, { build: customBuildOptions })
+
+        console.log(curConfig)
+        console.log(curConfig.build!.lib!.formats)
+        await build(curConfig)
 
         fs.outputFile(
             path.resolve(outDir, `package.json`),
@@ -74,6 +85,11 @@ const buildAll = async () => {
             `utf-8`
         )
     }
+}
+
+const buildAll = async () => {
+    await buildEntry()
+    // await buildSplit()
 }
 
 buildAll()

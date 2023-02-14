@@ -1,5 +1,5 @@
 <template>
-    <button>sfc-button</button>
+    <span>sfc button</span>
 </template>
 
 <script>
@@ -7,3 +7,5 @@ export default {
     name: 'HSFCButton',
 }
 </script>
+
+<style></style>

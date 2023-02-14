@@ -1,4 +1,5 @@
 import { defineComponent, createVNode, createTextVNode, openBlock, createElementBlock } from "vue";
+const __uno = "";
 const props = {
   color: {
     type: String,
@@ -11,7 +12,7 @@ const props = {
     // 设定默认颜色
   }
 };
-const Button = /* @__PURE__ */ defineComponent({
+const Button$2 = /* @__PURE__ */ defineComponent({
   name: "HButton",
   props,
   setup(props2, {
@@ -35,16 +36,18 @@ const Button = /* @__PURE__ */ defineComponent({
     }, null) : "", slots.default ? slots.default() : ""]);
   }
 });
-const __uno = "";
-Button.install = (app) => {
-  app.component(Button.name, Button);
+Button$2.install = (app) => {
+  app.component(Button$2.name, Button$2);
 };
-const JSXButton = /* @__PURE__ */ defineComponent({
+const Button$1 = /* @__PURE__ */ defineComponent({
   name: "HJSXButton",
   render() {
     return createVNode("button", null, [createTextVNode("jsx-button")]);
   }
 });
+Button$1.install = (app) => {
+  app.component(Button$1.name, Button$1);
+};
 const _export_sfc = (sfc, props2) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props2) {
@@ -56,20 +59,23 @@ const _sfc_main = {
   name: "HSFCButton"
 };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("button", null, "sfc-button");
+  return openBlock(), createElementBlock("span", null, "sfc button");
 }
-const SFCButton = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+const Button = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+Button.install = (app) => {
+  app.component(Button.name, Button);
+};
 const entry = {
   install(app) {
+    app.component(Button$2.name, Button$2);
+    app.component(Button$1.name, Button$1);
     app.component(Button.name, Button);
-    app.component(JSXButton.name, JSXButton);
-    app.component(SFCButton.name, SFCButton);
   }
 };
 export {
-  Button,
-  JSXButton,
-  SFCButton,
+  Button$2 as Button,
+  Button$1 as JSXButton,
+  Button as SFCButton,
   entry as default
 };
 //# sourceMappingURL=h-ui.es.js.map

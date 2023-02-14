@@ -1,6 +1,6 @@
 import 'uno.css'
 
-import Button from './Button'
+import Button from './SFCButton.vue'
 import { App } from 'vue'
 
 Button.install = (app: App) => {

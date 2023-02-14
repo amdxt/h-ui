@@ -13,6 +13,7 @@ const rollupOptions = {
         globals: {
             vue: 'Vue',
         },
+        exports: 'named' as any,
     },
 }
 

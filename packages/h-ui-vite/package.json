@@ -16,7 +16,6 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@my-h-ui/h-ui": "workspace:^1.0.1",
-        "vue": "^3.2.44"
+        "@my-h-ui/h-ui": "workspace:^1.0.1"
     }
 }
