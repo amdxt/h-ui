@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 
-import { defineConfig } from 'vite'
+import { defineConfig, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import legacy from '@vitejs/plugin-legacy'
@@ -16,7 +16,7 @@ const rollupOptions = {
     },
 }
 
-export default defineConfig({
+export const config: UserConfig = {
     resolve: {
         alias: [
             {
@@ -39,6 +39,7 @@ export default defineConfig({
             }, // 导出的模块格式
             name: 'HUI', // UMD IIFE 全局变量的名字
         },
+        outDir: './dist',
     },
     test: {
         // enable jest-like global test APIs
@@ -51,4 +52,6 @@ export default defineConfig({
             web: [/.[tj]sx$/],
         },
     },
-})
+}
+
+export default defineConfig(config)

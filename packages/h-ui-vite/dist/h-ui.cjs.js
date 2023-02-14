@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
 const vue = require("vue");
-const __uno = "";
 const props = {
   color: {
     type: String,
@@ -38,6 +37,7 @@ const Button = /* @__PURE__ */ vue.defineComponent({
     }, null) : "", slots.default ? slots.default() : ""]);
   }
 });
+const __uno = "";
 Button.install = (app) => {
   app.component(Button.name, Button);
 };

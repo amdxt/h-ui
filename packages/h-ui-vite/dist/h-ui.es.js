@@ -1,5 +1,4 @@
 import { defineComponent, createVNode, createTextVNode, openBlock, createElementBlock } from "vue";
-const __uno = "";
 const props = {
   color: {
     type: String,
@@ -36,6 +35,7 @@ const Button = /* @__PURE__ */ defineComponent({
     }, null) : "", slots.default ? slots.default() : ""]);
   }
 });
+const __uno = "";
 Button.install = (app) => {
   app.component(Button.name, Button);
 };
