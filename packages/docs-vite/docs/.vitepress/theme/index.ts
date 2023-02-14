@@ -1,6 +1,7 @@
 
 import DefaultTheme from 'vitepress/theme'
-import HUI from '../../../src/entry'
+// 使用的源代码
+import HUI from '@my-h-ui/h-ui/src/entry'
 
 import 'vitepress-theme-demoblock/dist/theme/styles/index.css'
 import Demo from 'vitepress-theme-demoblock/dist/client/components/Demo.vue'

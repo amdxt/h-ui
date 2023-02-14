@@ -1,5 +1,5 @@
 {
-    "name": "@my-h-ui/h-ui",
+    "name": "h-ui",
     "version": "1.0.1",
     "description": "",
     "main": "index.js",
@@ -8,16 +8,17 @@
         "registry": "https://registry.npmjs.com"
     },
     "scripts": {
-        "test": "vitest",
-        "test:run": "vitest run",
-        "dev": "vite serve --port 3000",
-        "build": "vite build",
-        "docs:dev": "vitepress dev docs --port 3001",
-        "docs:build": "vitepress build docs",
-        "docs:serve": "vitepress serve docs",
+        "test": "cd packages/h-ui-vite && vitest",
+        "test:run": "cd packages/h-ui-vite && vitest run",
+        "dev": "cd packages/h-ui-vite && vite serve --port 3000",
+        "build": "cd packages/h-ui-vite && vite build",
+        "docs:dev": "cd packages/docs-vite && vitepress dev docs --port 3001",
+        "docs:build": "cd packages/docs-vite && vitepress build docs",
+        "docs:serve": "cd packages/docs-vite && vitepress serve docs",
         "lint": "eslint --fix --ext .ts,.tsx,.vue src/**",
         "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.vue\"",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "preinstall": "node ./scripts/preinstall.js"
     },
     "author": "",
     "license": "ISC",
@@ -50,6 +51,7 @@
     "dependencies": {
         "@commitlint/cli": "17.0.2",
         "@commitlint/config-conventional": "17.0.2",
+        "@my-h-ui/h-ui": "workspace:^1.0.1",
         "vue": "^3.2.44"
     },
     "lint-staged": {

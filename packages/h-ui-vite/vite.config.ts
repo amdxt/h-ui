@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import legacy from '@vitejs/plugin-legacy'
 
-import unocss from './config/unocss'
+import unocss from '../../config/unocss'
 
 const rollupOptions = {
     external: ['vue', 'vue-router'],
