@@ -1,3 +1,13 @@
+# 快速开始
+
+用下方命令, 你可以立即得到一个使用了 vite4 vue3 @my-h-ui/h-ui 的 app, 剩下的就看你的想象力了
+```
+npm create h-ui-cli
+yarn create h-ui-cli
+<!-- 推荐 pnpm -->
+pnpm create h-ui-cli
+```
+
 # Button 按钮
 常用操作按钮
 
