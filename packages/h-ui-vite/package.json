@@ -1,6 +1,6 @@
 {
     "name": "@my-h-ui/h-ui",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "",
     "main": "./dist/h-ui.umd.js",
     "module": "./dist/h-ui.es.js",

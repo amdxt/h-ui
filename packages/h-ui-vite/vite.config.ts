@@ -21,10 +21,11 @@ const rollupOptions = {
 export const config: UserConfig = {
     resolve: {
         alias: [
-            {
-                find: 'vue',
-                replacement: 'vue/dist/vue.esm-bundler',
-            },
+            // 这里影响类型系统的生成了 dist/h-ui.d.ts
+            // {
+            //     find: 'vue',
+            //     replacement: 'vue/dist/vue.esm-bundler',
+            // },
         ],
     },
     plugins: [
