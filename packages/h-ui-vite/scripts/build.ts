@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 console.log('====start to build:all =====')
 
 import * as fs from 'fs-extra'
@@ -11,6 +12,7 @@ import {
     mergeConfig,
 } from 'vite'
 import { merge } from 'lodash'
+import { generateDTS } from './type'
 
 const buildEntry = async () => {
     // 全量打包 build:entry
@@ -41,9 +43,10 @@ const buildSplit = async () => {
     //     path.resolve(baseOutDir + '/README.md')
     // )
 
-    // 生成配置DTS配置文件入口
-    // generateDTS(path.resolve(config.build.outDir, `smarty-ui.esm.js`))
-
+    // 分包打包有点问题, 先不搞分包 build
+    // 分包打包有点问题, 先不搞分包 build
+    // 分包打包有点问题, 先不搞分包 build
+    return
     // 各个组件分别打包
     console.log('===build:split===')
     const srcDir = path.resolve(__dirname, '../src/')
@@ -87,9 +90,16 @@ const buildSplit = async () => {
     }
 }
 
+const genDTS = async () => {
+    // 生成配置DTS配置文件入口
+    console.log('========generateDTS h-ui.d.ts ===========')
+    await generateDTS(path.resolve(config!.build!.outDir as any, `h-ui.es.js`))
+}
+
 const buildAll = async () => {
     await buildEntry()
-    // await buildSplit()
+    await buildSplit()
+    await genDTS()
 }
 
 buildAll()

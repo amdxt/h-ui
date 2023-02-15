@@ -1,9 +1,10 @@
 {
     "name": "@my-h-ui/h-ui",
-    "version": "1.0.3",
+    "version": "1.0.7",
     "description": "",
     "main": "./dist/h-ui.umd.js",
     "module": "./dist/h-ui.es.js",
+    "types": "./dist/h-ui.d.ts",
     "scripts": {
         "build": "pnpm run build:all",
         "build:all": "esno ./scripts/build.ts",
@@ -17,6 +18,9 @@
     "license": "ISC",
     "dependencies": {
         "@my-h-ui/h-ui": "workspace:^1.0.1"
+    },
+    "devDependencies": {
+        "@vitest/coverage-istanbul": "^0.28.5"
     },
     "files": [
         "index.js",
@@ -32,8 +36,5 @@
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.com"
-    },
-    "devDependencies": {
-        "@vitest/coverage-istanbul": "^0.28.5"
     }
 }
