@@ -1,12 +1,9 @@
 {
     "name": "@my-h-ui/h-ui",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "",
-    "main": "index.js",
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://registry.npmjs.com"
-    },
+    "main": "./dist/h-ui.umd.js",
+    "module": "./dist/h-ui.es.js",
     "scripts": {
         "build": "pnpm run build:all",
         "build:all": "esno ./scripts/build.ts",
@@ -28,5 +25,9 @@
         "macros-global.d.ts",
         "ref-macros.d.ts",
         "src"
-    ]
+    ],
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.com"
+    }
 }

@@ -22,7 +22,7 @@ export default async () => {
     logGreen('🚌 创建项目:' + name)
 
     // 下载模板 download-git-repo
-    await cloneGitRepo('github:smarty-team/smarty-ui-app-js-template', name)
+    await cloneGitRepo('github:ayangliayangli/h-ui-app-vite-template', name)
 
     // 编译模板 handlebars
     compileHbsAndWriteFs(
