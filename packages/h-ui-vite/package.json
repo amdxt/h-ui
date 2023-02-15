@@ -8,7 +8,8 @@
         "build": "pnpm run build:all",
         "build:all": "esno ./scripts/build.ts",
         "build:entry": "vite build",
-        "build:split": "echo \"111\""
+        "build:split": "echo \"111\"",
+        "coverage": "vitest run --coverage"
     },
     "author": "",
     "license": "ISC",
@@ -29,5 +30,8 @@
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.com"
+    },
+    "devDependencies": {
+        "@vitest/coverage-istanbul": "^0.28.5"
     }
 }
