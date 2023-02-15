@@ -1,6 +1,6 @@
 {
     "name": "@my-h-ui/h-ui",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "",
     "main": "index.js",
     "publishConfig": {
@@ -17,5 +17,16 @@
     "license": "ISC",
     "dependencies": {
         "@my-h-ui/h-ui": "workspace:^1.0.1"
-    }
+    },
+    "files": [
+        "index.js",
+        "index.mjs",
+        "dist",
+        "compiler-sfc",
+        "server-renderer",
+        "macros.d.ts",
+        "macros-global.d.ts",
+        "ref-macros.d.ts",
+        "src"
+    ]
 }
