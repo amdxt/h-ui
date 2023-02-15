@@ -16,6 +16,8 @@
 ![npm (scoped with tag)](https://img.shields.io/npm/v/@my-h-ui/h-ui/latest?style=for-the-badge)
 ![npm](https://img.shields.io/npm/dy/@my-h-ui/h-ui?style=for-the-badge)
 
+[![codecov](https://codecov.io/gh/ayangliayangli/h-ui/branch/master/graph/badge.svg?token=2TC3DFBRY2)](https://codecov.io/gh/ayangliayangli/h-ui)
+
 </div>
 
 <br>
