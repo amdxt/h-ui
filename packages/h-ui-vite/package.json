@@ -9,7 +9,9 @@
         "build:all": "esno ./scripts/build.ts",
         "build:entry": "vite build",
         "build:split": "echo \"111\"",
-        "coverage": "vitest run --coverage"
+        "coverage": "vitest run --coverage",
+        "lint": "eslint --fix --ext .ts,.tsx,.vue src/**",
+        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.vue\""
     },
     "author": "",
     "license": "ISC",

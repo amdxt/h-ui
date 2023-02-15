@@ -15,8 +15,8 @@
         "docs:dev": "cd packages/docs-vite && vitepress dev docs --port 3001",
         "docs:build": "cd packages/docs-vite && vitepress build docs",
         "docs:serve": "cd packages/docs-vite && vitepress serve docs",
-        "lint": "eslint --fix --ext .ts,.tsx,.vue src/**",
-        "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.vue\"",
+        "lint": "cd packages/h-ui-vite && pnpm lint",
+        "format": "cd packages/h-ui-vite && pnpm format",
         "prepare": "husky install",
         "preinstall": "node ./scripts/preinstall.js"
     },
