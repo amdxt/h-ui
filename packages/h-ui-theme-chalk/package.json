@@ -1,11 +1,13 @@
 {
-  "name": "@my-h-ui/docs",
+  "name": "@my-h-ui/theme-chalk",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {

@@ -38,6 +38,7 @@ export default defineComponent({
       hover:bg-${props.color}-700 
       border-none 
       cursor-pointer 
+      h-button__text--primary
       `}
             >
                 {props.color ? (

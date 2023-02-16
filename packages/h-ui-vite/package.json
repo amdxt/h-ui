@@ -17,22 +17,10 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@my-h-ui/h-ui": "workspace:^1.0.1"
     },
     "devDependencies": {
         "@vitest/coverage-istanbul": "^0.28.5"
     },
-    "files": [
-        "index.js",
-        "index.mjs",
-        "dist",
-        "compiler-sfc",
-        "server-renderer",
-        "macros.d.ts",
-        "macros-global.d.ts",
-        "ref-macros.d.ts",
-        "src"
-    ],
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.com"
