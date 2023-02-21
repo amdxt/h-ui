@@ -17,7 +17,10 @@ import {
     type ExtensionContext,
     type CompletionItemProvider,
 } from 'vscode'
-import { componentsMap, type ComponentDescriptor } from './componentsMap'
+import {
+    componentsMap,
+    type ComponentDescriptor,
+} from '../meta-data/componentsMap'
 import { bigCamelize, isString, kebabCase } from '@varlet/shared'
 import {
     ATTR_RE,

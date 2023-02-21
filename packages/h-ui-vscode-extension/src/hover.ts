@@ -6,7 +6,7 @@ import {
     type TextDocument,
     type ExtensionContext,
 } from 'vscode'
-import { componentsMap } from './componentsMap'
+import { componentsMap } from '../meta-data/componentsMap'
 import {
     TAG_BIG_CAMELIZE_RE,
     DOCUMENTATION_EN,
