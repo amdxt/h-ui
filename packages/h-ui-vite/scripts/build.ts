@@ -28,14 +28,15 @@ const buildSplit = async () => {
     const baseOutDir = config!.build!.outDir as string
 
     // 复制 Package.json 文件
-    const packageJson = require('../package.json')
-    packageJson.main = 'h-ui.umd.js'
-    packageJson.module = 'h-ui.esm.js'
-    packageJson.types = 'h-ui.d.ts'
-    fs.outputFile(
-        path.resolve(baseOutDir, `package.json`),
-        JSON.stringify(packageJson, null, 2)
-    )
+    // 如果在 dist/package.json 那么 @my-h-ui/h-ui 根目录就是 dist 里面了, docs 里面无法使用 src 里面的代码, 先注释
+    // const packageJson = require('../package.json')
+    // packageJson.main = 'h-ui.umd.js'
+    // packageJson.module = 'h-ui.esm.js'
+    // packageJson.types = 'h-ui.d.ts'
+    // fs.outputFile(
+    //     path.resolve(baseOutDir, `package.json`),
+    //     JSON.stringify(packageJson, null, 2)
+    // )
 
     // 拷贝 README.md文件
     // fs.copyFileSync(
