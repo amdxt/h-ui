@@ -1,0 +1,9 @@
+@use './common/var.scss' as *;
+@use 'sass:color';
+@use ''
+
+.button {
+    &.h-button__text--primary {
+        color: red;
+    }
+}

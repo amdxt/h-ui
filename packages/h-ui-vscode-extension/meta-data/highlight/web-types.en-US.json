@@ -1,0 +1,56 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
+  "framework": "vue",
+  "version": "2.8.3",
+  "name": "VARLET",
+  "contributions": {
+    "html": {
+      "tags": [
+        {
+          "name": "demo",
+          "attributes": [
+            {
+              "name": "type",
+              "description": "type description",
+              "default": "default",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "size",
+              "description": "size description",
+              "default": "normal",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "select1",
+              "description": "Triggered when the action is click"
+            },
+            {
+              "name": "select2",
+              "description": "Triggered when the action is click"
+            },
+            {
+              "name": "select3",
+              "description": "Triggered when the action is click"
+            }
+          ],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Button group content"
+            }
+          ]
+        }
+      ],
+      "types-syntax": "typescript"
+    }
+  }
+}

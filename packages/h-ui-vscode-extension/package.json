@@ -1,0 +1,83 @@
+{
+  "name": "h-ui-vscode-extension",
+  "private": true,
+  "main": "./dist/extension.js",
+  "icon": "src/assets/icon.png",
+  "displayName": "h-ui-vscode-extension",
+  "description": "hui extension for vscode",
+  "publisher": "yangli03",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.56.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "hui.open-playground",
+        "title": "hui: Open HUI Playground"
+      },
+      {
+        "command": "hui.open-playground-and-wrap-template-tag",
+        "title": "hui: Open HUI Playground And Wrap Template Tag"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "hui.open-playground",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        },
+        {
+          "command": "hui.open-playground-and-wrap-template-tag",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "h-ui Extension Configuration",
+      "properties": {
+        "hui.useChineseLanguage": {
+          "type": "boolean",
+          "default": false,
+          "description": "Use chinese language"
+        }
+      }
+    }
+  },
+  "activationEvents": [
+    "onLanguage:vue",
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/varletjs/varlet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/varletjs/varlet/issues"
+  },
+  "scripts": {
+    "dev": "varlet-cli dev:extension",
+    "build": "varlet-cli build:extension",
+    "release": "pnpm build && vsce package --no-dependencies && vsce publish --no-dependencies"
+  },
+  "dependencies": {
+    "@varlet/icons": "^2.8.3",
+    "@varlet/shared": "^2.8.3"
+  },
+  "devDependencies": {
+    "@types/node": "14.x",
+    "@types/vscode": "^1.56.0",
+    "@varlet/cli": "^2.8.3",
+    "@vscode/vsce": "^2.17.0",
+    "typescript": "^4.4.4"
+  }
+}

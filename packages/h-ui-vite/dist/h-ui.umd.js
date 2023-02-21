@@ -36,6 +36,7 @@
       hover:bg-${props2.color}-700 
       border-none 
       cursor-pointer 
+      h-button__text--primary
       `
       }, [props2.color ? vue.createVNode("i", {
         "class": `i-ic-baseline-${props2.icon} p-3`

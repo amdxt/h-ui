@@ -2,7 +2,7 @@
 import DefaultTheme from 'vitepress/theme'
 // 使用的源代码 组件
 // 主题
-import '@my-h-ui/theme-chalk/index.scss'
+import '@my-h-ui/theme-chalk/src/index.scss'
 // 组件
 import HUI from '@my-h-ui/h-ui/src/entry'
 

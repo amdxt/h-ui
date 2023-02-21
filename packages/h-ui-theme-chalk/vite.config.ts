@@ -1,7 +1,7 @@
 import type { UserConfigExport } from 'vite'
 import { resolve } from 'path'
 
-const input = resolve(__dirname, './index.scss')
+const input = resolve(__dirname, './src/index.scss')
 const outDir = resolve(__dirname, './dist')
 
 export default (): UserConfigExport => {
