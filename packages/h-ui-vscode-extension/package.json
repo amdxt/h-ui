@@ -1,5 +1,5 @@
 {
-  "name": "h-ui-vscode-extension",
+  "name": "@my-h-ui/vscode-extension",
   "private": true,
   "main": "./dist/extension.js",
   "icon": "src/assets/icon.png",
