@@ -19,6 +19,9 @@ function copyVarletDependencies(): Plugin {
         name: 'copy-varlet-dependencies',
 
         buildStart() {
+            console.log('process.cwd()', process.cwd())
+            console.log('__dirname', __dirname)
+            console.log('huiCSSFileThemeChalk', huiCSSFileThemeChalk)
             //  复制文件 ../h-ui-vite/dist/entry.css --> public/entry.css
             fs.copyFileSync(huiCSSFile, resolve('public/entry.css'))
             // 复制文件 ../h-ui-theme-chalk/dist/index.css --> public/index.css
