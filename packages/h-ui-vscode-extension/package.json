@@ -2,7 +2,7 @@
   "name": "h-ui-vscode-extension",
   "private": true,
   "main": "./dist/extension.js",
-  "icon": "src/assets/icon.png",
+  "icon": "src/assets/h-ui--logo.png",
   "displayName": "h-ui-vscode-extension",
   "description": "hui extension for vscode",
   "publisher": "yangli03",
