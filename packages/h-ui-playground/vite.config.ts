@@ -23,25 +23,6 @@ function copyVarletDependencies(): Plugin {
             console.log('__dirname', __dirname)
             console.log('huiCSSFileThemeChalk', huiCSSFileThemeChalk)
             console.log('=========')
-            console.log(`resolve(__dirname)`, fs.existsSync(resolve(__dirname)))
-            console.log(
-                `resolve(__dirname,'../')`,
-                fs.existsSync(resolve(__dirname, '../'))
-            )
-            console.log(
-                `resolve(__dirname,'../h-ui-theme-chalk')`,
-                fs.existsSync(resolve(__dirname, '../h-ui-theme-chalk'))
-            )
-            console.log(
-                `resolve(__dirname,'../h-ui-theme-chalk/dist')`,
-                fs.existsSync(resolve(__dirname, '../h-ui-theme-chalk/dist'))
-            )
-            console.log(
-                `resolve(__dirname,'../h-ui-theme-chalk/dist/index.css')`,
-                fs.existsSync(
-                    resolve(__dirname, '../h-ui-theme-chalk/dist/index.css')
-                )
-            )
             //  复制文件 ../h-ui-vite/dist/entry.css --> public/entry.css
             fs.copyFileSync(huiCSSFile, resolve('public/entry.css'))
             // 复制文件 ../h-ui-theme-chalk/dist/index.css --> public/index.css
