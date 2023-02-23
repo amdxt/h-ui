@@ -1,12 +1,12 @@
 {
-  "name": "@my-h-ui/vscode-extension",
+  "name": "h-ui-vscode-extension",
   "private": true,
   "main": "./dist/extension.js",
   "icon": "src/assets/icon.png",
   "displayName": "h-ui-vscode-extension",
   "description": "hui extension for vscode",
   "publisher": "yangli03",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.56.0"
   },
