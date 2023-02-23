@@ -8,7 +8,7 @@ export interface ComponentDescriptor {
 export const componentsMap: Record<string, ComponentDescriptor> = {
     // <var-demo name=""><cursor-pos></var-demo>
     demo: {
-        path: '/demo', // hover 上去的时候, 跳转到文档需要的path
+        path: '/components/button/simple.html', // hover 上去的时候, 跳转到文档需要的path
         attrs: ['name=""'], // 默认属性
         closeSelf: false, // 是否是自闭和的
         characterDelta: 0, // 选择组建后, 鼠标往前移动步数

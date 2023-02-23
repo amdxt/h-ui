@@ -10,9 +10,12 @@ export const TAG_BIG_CAMELIZE_RE = /(?<=<H)([\w-]+)/g // 匹配组件的名称, 
 // https://regexr.com/77ppf
 export const ATTR_RE = /(?:<(h-[\w-]+)[^>/]*)|(?:<(H[\w-]+)[^>/]*)/g // 匹配是否在编写 props  ?: 内容不会出现在 capture group 中
 export const PROP_NAME_RE = /name=['"][\w-]*/ // 正在写 name="" 这个属性
-export const DOCUMENTATION_EN = 'https://varlet.gitee.io/varlet-ui/#/en-US'
-export const DOCUMENTATION_ZH = 'https://varlet.gitee.io/varlet-ui/#/zh-CN'
-export const PLAYGROUND = 'https://varlet.gitee.io/varlet-ui-playground'
+// export const DOCUMENTATION_EN = 'https://varlet.gitee.io/varlet-ui/#/en-US'
+export const DOCUMENTATION_EN = 'https://h-ui.ayangli.com'
+// export const DOCUMENTATION_ZH = 'https://varlet.gitee.io/varlet-ui/#/zh-CN'
+export const DOCUMENTATION_ZH = 'https://h-ui.ayangli.com'
+export const PLAYGROUND = 'https://h-ui-playground.ayangli.com'
+// todo
 export const ICONS_STATIC = 'https://varlet.gitee.io/varlet-ui/icons/png'
 
 // 新增的配置
