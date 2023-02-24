@@ -1,7 +1,7 @@
 export const nav = [
-    { text: 'Guide', link: '/guide/',  activeMatch: '/guide' },
+    { text: 'Guide', link: '/guides/',  activeMatch: '/guide' },
     { text: 'component', link: '/components/' , activeMatch: '/components'},
-    { text: 'Configs', link: '/configs' },
+    { text: 'Configs', link: '/configs/' },
     {
       text: 'Dropdown Menu',
       items: [

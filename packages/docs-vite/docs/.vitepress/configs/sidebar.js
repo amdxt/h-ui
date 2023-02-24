@@ -1,12 +1,15 @@
 export const sidebar = {
-    '/': [
-      { text: '快速开始', link: '/' },
+    '/guides': [
+        { text: '快速开始', link: '/guides/' },
+    ],
+
+    '/components': [
       {
-        text: '通用',
+        text: '组件',
         items: [
           {
             text: 'Tabs',
-            link: '/components/tabs',
+            link: '/components/tabs/',
           },
           {
             text: 'Button 按钮',
@@ -22,28 +25,7 @@ export const sidebar = {
               },
             ],
           },
-          {
-            text: 'icon',
-            link: '/components/icon/',
-          },
-          {
-            text: 'checkbox',
-            link: '/components/checkbox/',
-          },
-          {
-            text: 'transfer',
-            link: '/components/transfer/',
-          },
-          {
-            text: 'message',
-            link: '/components/message/',
-          },
         ],
       },
-      { text: '导航' },
-      { text: '反馈' },
-      { text: '数据录入' },
-      { text: '数据展示' },
-      { text: '布局' },
     ],
   };
