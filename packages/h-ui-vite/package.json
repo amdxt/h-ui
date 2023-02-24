@@ -1,6 +1,6 @@
 {
     "name": "@my-h-ui/h-ui",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "",
     "main": "./dist/h-ui.umd.js",
     "module": "./dist/h-ui.es.js",
@@ -16,8 +16,7 @@
     },
     "author": "",
     "license": "ISC",
-    "dependencies": {
-    },
+    "dependencies": {},
     "devDependencies": {
         "@vitest/coverage-istanbul": "^0.28.5"
     },
