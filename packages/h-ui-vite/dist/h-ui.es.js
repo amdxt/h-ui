@@ -1,4 +1,4 @@
-import { defineComponent, createVNode, createTextVNode, openBlock, createElementBlock } from "vue";
+import { defineComponent, createVNode, createTextVNode, openBlock, createElementBlock, Fragment, renderList, normalizeClass, normalizeStyle, createCommentVNode, toDisplayString } from "vue";
 const __uno = "";
 const props = {
   color: {
@@ -56,21 +56,89 @@ const _export_sfc = (sfc, props2) => {
   }
   return target;
 };
-const _sfc_main = {
+const _sfc_main$1 = {
   name: "HSFCButton"
 };
-function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("span", null, "sfc button");
 }
-const Button = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+const Button = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
 Button.install = (app) => {
   app.component(Button.name, Button);
+};
+const Tabs_vue_vue_type_style_index_0_scoped_221a5ab7_lang = "";
+const _sfc_main = {
+  name: "HTabs",
+  props: {
+    tabs: {
+      type: Array,
+      default() {
+        return [];
+      }
+    },
+    value: {
+      type: [String, Number]
+    },
+    height: {
+      type: Number,
+      default: 40
+    },
+    fontSize: {
+      type: Number,
+      default: 14
+    }
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    valueInner: {
+      get() {
+        return this.value;
+      },
+      set(val) {
+        this.$emit("update:value", val);
+      }
+    }
+  },
+  methods: {
+    handleClickTab(id) {
+      this.valueInner = id;
+      this.$emit("change", id);
+    }
+  }
+};
+const _hoisted_1 = ["name", "onClick"];
+const _hoisted_2 = {
+  key: 0,
+  class: "el-icon-loading"
+};
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", null, [
+    (openBlock(true), createElementBlock(Fragment, null, renderList($props.tabs, (tab) => {
+      return openBlock(), createElementBlock("span", {
+        key: tab.name,
+        class: normalizeClass(["tab", { active: tab.id === $options.valueInner }]),
+        style: normalizeStyle({ lineHeight: `${$props.height}px`, fontSize: `${$props.fontSize}px` }),
+        name: tab.id,
+        onClick: ($event) => $options.handleClickTab(tab.id)
+      }, [
+        tab.isLoading ? (openBlock(), createElementBlock("i", _hoisted_2)) : createCommentVNode("", true),
+        createTextVNode(" " + toDisplayString(tab.name), 1)
+      ], 14, _hoisted_1);
+    }), 128))
+  ]);
+}
+const Tabs = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-221a5ab7"]]);
+Tabs.install = (app) => {
+  app.component(Tabs.name, Tabs);
 };
 const entry = {
   install(app) {
     app.component(Button$2.name, Button$2);
     app.component(Button$1.name, Button$1);
     app.component(Button.name, Button);
+    app.component(Tabs.name, Tabs);
   }
 };
 export {

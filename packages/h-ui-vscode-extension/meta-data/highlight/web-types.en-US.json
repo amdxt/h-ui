@@ -48,7 +48,45 @@
               "description": "Button group content"
             }
           ]
+        },
+        {
+          "name": "tabs",
+          "attributes": [
+            {
+              "name": "tabs",
+              "description": "options",
+              "default": "",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "value",
+              "description": "目前选中的 item 的 id",
+              "default": "",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "update:value",
+              "description": "当 item 被点击的时候"
+            }
+          ],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Button group content"
+            }
+          ]
         }
+
+
+
       ],
       "types-syntax": "typescript"
     }
