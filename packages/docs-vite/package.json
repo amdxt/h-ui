@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "pnpm run register:components && vitepress dev docs",
+    "docs:build": "pnpm run register:components && vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "register:components": "vitepress-rc"
   },
   "author": "",
   "license": "ISC",
