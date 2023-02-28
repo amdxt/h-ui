@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 import { getDirname } from './fsUtils.js';
-// h-ui/packages/h-ui-cli/  lib/node/shared/
+// h-ui/packages/h-ui-cli/ lib/node/shared/
 export const dirname = getDirname(import.meta.url);
 console.log('dirname', dirname);
 export const CWD = process.cwd();

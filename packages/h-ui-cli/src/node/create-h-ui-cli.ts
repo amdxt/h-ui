@@ -40,7 +40,7 @@ async function query() {
     if (answer.operation === 'exit') {
         logGreen('小的退下了')
     } else {
-        const { default: op } = await import(`./commands/create-h-ui-app`)
+        const { default: op } = await import(`./commands/create-h-ui-app.js`)
         if (op) {
             op()
         }
