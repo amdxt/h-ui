@@ -6,7 +6,7 @@
   "displayName": "h-ui-vscode-extension",
   "description": "hui extension for vscode",
   "publisher": "yangli03",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.56.0"
   },
@@ -70,6 +70,7 @@
     "release": "pnpm build && vsce package --no-dependencies && vsce publish --no-dependencies"
   },
   "dependencies": {
+    "@my-h-ui/docs": "workspace:^1.0.0",
     "@varlet/icons": "^2.8.3",
     "@varlet/shared": "^2.8.3"
   },

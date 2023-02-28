@@ -6,12 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:dev": "pnpm run register:components && vitepress dev docs",
-    "docs:build": "pnpm run register:components && vitepress build docs",
+    "docs:build": "pnpm run register:components && pnpm run highlight:build && vitepress build docs",
     "docs:serve": "vitepress serve docs",
-    "register:components": "vitepress-rc"
+    "register:components": "vitepress-rc",
+    "highlight:build": "h-ui-cli compile"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "create-h-ui-cli": "workspace:^1.0.8"
   }
 }

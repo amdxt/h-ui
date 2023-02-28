@@ -1,0 +1,205 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
+  "framework": "vue",
+  "version": "1.0.8",
+  "name": "h-ui",
+  "contributions": {
+    "html": {
+      "tags": [
+        {
+          "name": "button",
+          "attributes": [],
+          "events": [],
+          "slots": []
+        },
+        {
+          "name": "demo",
+          "attributes": [
+            {
+              "name": "d-type",
+              "description": "Button type, Can be set to `default` `primary` `info` `success` `warning` `danger`",
+              "default": "default",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-native-type",
+              "description": "Native button type, Can be set to `button` `submit` `reset`",
+              "default": "button",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-size",
+              "description": "Button size, Can be set to `normal` `mini` `small` `large`",
+              "default": "normal",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-loading",
+              "description": "Loading status",
+              "default": "false",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-loading-radius",
+              "description": "Loading radius, Can only be used when `loading-type=\"circle\"`",
+              "default": "-",
+              "value": {
+                "type": "string  | number",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-loading-type",
+              "description": "Loading type, Can be set to `circle` `wave` `cube` `rect` `disappear`",
+              "default": "circle",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-loading-size",
+              "description": "Loading size, Can be set to `large` `normal` `small` `mini`",
+              "default": "normal",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-loading-color",
+              "description": "Loading color",
+              "default": "currentColor",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-auto-loading",
+              "description": "Autoload mode for easy handling of asynchronous tasks",
+              "default": "false",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-round",
+              "description": "Whether to be round button",
+              "default": "false",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-block",
+              "description": "Whether to be block button",
+              "default": "false",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-text",
+              "description": "Whether to be text button",
+              "default": "false",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-outline",
+              "description": "Whether to be outline button",
+              "default": "false",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-disabled",
+              "description": "Whether to disable button",
+              "default": "false",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-ripple",
+              "description": "Whether to be ripple button",
+              "default": "true",
+              "value": {
+                "type": "boolean",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-text-color",
+              "description": "Button Text color",
+              "default": "-",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            },
+            {
+              "name": "d-color",
+              "description": "Button background color",
+              "default": "-",
+              "value": {
+                "type": "string",
+                "kind": "expression"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "d-click",
+              "description": "Triggered when the button is clicked. Not triggered when `loading` or `disabled` status is `true`"
+            },
+            {
+              "name": "d-touchstart",
+              "description": "Triggered when the button is touchstart, Not triggered when `loading` or `disabled` status is `true`"
+            }
+          ],
+          "slots": [
+            {
+              "name": "d-default",
+              "description": "Button content"
+            }
+          ]
+        },
+        {
+          "name": "icon",
+          "attributes": [],
+          "events": [],
+          "slots": []
+        },
+        {
+          "name": "tabs",
+          "attributes": [],
+          "events": [],
+          "slots": []
+        }
+      ],
+      "types-syntax": "typescript"
+    }
+  }
+}

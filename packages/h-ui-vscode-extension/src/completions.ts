@@ -1,7 +1,8 @@
 import { COMPONENT_NAMESPACE } from './constant'
-// todo 这个文件里面存储了指定组件的 attrs events slots 等数据
-import enWebTypes from '../meta-data/highlight/web-types.en-US.json'
-import zhWebTypes from '../meta-data/highlight/web-types.en-US.json'
+// 这个文件里面存储了指定组件的 attrs events slots 等数据
+// 该文件使用 cli 根据 docs-vite 自动生成的
+import enWebTypes from '@my-h-ui/docs/highlight/web-types.en-US.json'
+import zhWebTypes from '@my-h-ui/docs/highlight/web-types.en-US.json'
 
 // todo 这个库有所有的图标
 // todo 相应的文档放在了 gitee.com 上面
