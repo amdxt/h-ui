@@ -1,6 +1,7 @@
 export const sidebar = {
     '/guides': [
         { text: '快速开始', link: '/guides/' },
+        { text: '颜色', link: '/guides/color-block' },
     ],
 
     '/components': [

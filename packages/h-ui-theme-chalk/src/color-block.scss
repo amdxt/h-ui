@@ -1,0 +1,51 @@
+@use 'sass:map';
+
+@use 'common/var' as *;
+@use 'mixins/mixins' as *;
+@use 'mixins/utils' as *;
+@use 'mixins/var' as *;
+
+@mixin color-map-gen-bg-class($colorMap, $prefix) {
+    @each $name, $color in $colorMap {
+        $name-full: #{$prefix + $common-separator + $name};
+        @include m($name-full) {
+            background-color: $color;
+        }
+    }
+}
+
+@include b(color-block) {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: solid 1px $color-white;
+    font-size: 14px;
+
+    @include m(primary-color) {
+        background-color: $color-primary;
+    }
+
+    @each $type in $types {
+        @each $name, $color in map.get($colors, $type) {
+            $name-full: #{'colors' +
+                $common-separator +
+                $type +
+                $common-separator +
+                $name};
+            @include m($name-full) {
+                background-color: $color;
+            }
+        }
+    }
+
+    // @each $name, $color in $text-color {
+    //     $name-full: #{'text-color' + $common-separator + $name};
+    //     @include m($name-full) {
+    //         background-color: $color;
+    //     }
+    // }
+    @include color-map-gen-bg-class($text-color, 'text-color');
+    @include color-map-gen-bg-class($border-color, 'border-color');
+    @include color-map-gen-bg-class($fill-color, 'fill-color');
+    @include color-map-gen-bg-class($bg-color, 'bg-color');
+}
