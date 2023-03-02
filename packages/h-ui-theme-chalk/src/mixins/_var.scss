@@ -5,6 +5,8 @@
 @use '../common/var' as *;
 
 // set css var value, because we need translate value to string
+// set css var value, because we need translate value to string
+// set css var value, because we need translate value to string
 // for example:
 // @include set-css-var-value(('color', 'primary'), red);
 // --el-color-primary: red;
@@ -19,15 +21,18 @@
 }
 
 @mixin set-css-color-type($colors, $type) {
+  // --el-color-primary: $colors.primary.base
   @include set-css-var-value(('color', $type), map.get($colors, $type, 'base'));
 
   @each $i in (3, 5, 7, 8, 9) {
+    // --el-color-primary-light-3: $colors.primary.light-3
     @include set-css-var-value(
       ('color', $type, 'light', $i),
       map.get($colors, $type, 'light-#{$i}')
     );
   }
 
+  // --el-color-primary-dark-2: $colors.primary.dark-2
   @include set-css-var-value(
     ('color', $type, 'dark-2'),
     map.get($colors, $type, 'dark-2')
@@ -35,11 +40,14 @@
 }
 
 // set all css var for component by map
+// ("checkbox", ('bg-color': getCssVar('fill-color', 'blank')))
 @mixin set-component-css-var($name, $variables) {
   @each $attribute, $value in $variables {
     @if $attribute == 'default' {
       #{getCssVarName($name)}: #{$value};
     } @else {
+      // --el-checkbox-bg-color: getCssVar('fill-color', 'blank')
+      // --el-checkbox-bg-color: var(--el-fill-color-blank)
       #{getCssVarName($name, $attribute)}: #{$value};
     }
   }

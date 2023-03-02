@@ -1,0 +1,19 @@
+@use 'sass:map';
+
+@use 'common/var' as *;
+@use 'mixins/mixins' as *;
+@use 'mixins/utils' as *;
+@use 'mixins/var' as *;
+
+@include b(button) {
+  color: red;
+  @include e(link) {
+    color: green;
+    @include m(expand) {
+      color: goldenrod;
+      @include when(disabled) {
+        color: greenyellow;
+      }
+    }
+  }
+}

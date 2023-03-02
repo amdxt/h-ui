@@ -7,6 +7,7 @@ const outDir = resolve(__dirname, './dist')
 export default (): UserConfigExport => {
     return {
         build: {
+            minify: false,
             outDir,
             rollupOptions: {
                 input,

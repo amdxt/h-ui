@@ -1,8 +1,9 @@
 import { createApp, App } from 'vue'
-import Button from './Button'
-import JSXButton from './JSXButton'
-import SFCButton from './SFCButton'
+import Button from './button'
+import JSXButton from './jsx-button'
+import SFCButton from './sfc-button'
 import Tabs from './tabs'
+import RadioGroupButton from './radio-group-button'
 
 // 单独导出
 export { Button, JSXButton, SFCButton }
@@ -14,5 +15,6 @@ export default {
         app.component(JSXButton.name, JSXButton)
         app.component(SFCButton.name, SFCButton)
         app.component(Tabs.name, Tabs)
+        app.component(Tabs.RadioGroupButton, RadioGroupButton)
     },
 }

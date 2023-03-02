@@ -1,8 +1,1 @@
-@use './common/var.scss' as *;
-@use 'sass:color';
-
-button {
-    &.h-button__text--primary {
-        color: red;
-    }
-}
+@use './button.scss';

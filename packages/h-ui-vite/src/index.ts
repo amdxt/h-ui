@@ -1,7 +1,7 @@
 import { createApp, App } from 'vue'
-import Button from './Button'
+import Button from './button'
 import SFCButton from './SFCButton/SFCButton.vue'
-import JSXButton from './JSXButton'
+import JSXButton from './jsx-button'
 import HUI from './entry'
 
 const app = createApp({
