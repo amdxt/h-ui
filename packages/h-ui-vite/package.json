@@ -16,7 +16,12 @@
     },
     "author": "",
     "license": "ISC",
-    "dependencies": {},
+    "dependencies": {
+        "@my-h-ui/constants": "workspace:*",
+        "@my-h-ui/directives": "workspace:^0.0.5",
+        "@my-h-ui/tokens": "workspace:^0.0.5",
+        "@my-h-ui/utils": "workspace:*"
+    },
     "devDependencies": {
         "@vitest/coverage-istanbul": "^0.28.5"
     },

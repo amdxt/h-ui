@@ -15,7 +15,9 @@ const getAllIds = () => {
   const types = ["primary", "success", "warning", "danger", "error", "info"];
 
   types.forEach((type) => {
-    ret.push(`colors-${type}-color`);
+    // ret.push(`colors-${type}-color`);
+    ret.push(`colors-${type}-base`);
+
     ret.push(`colors-${type}-dark-2`);
     [1, 2, 3, 4, 5, 6, 7, 8, 9].forEach((num) => {
       ret.push(`colors-${type}-light-${num}`);
