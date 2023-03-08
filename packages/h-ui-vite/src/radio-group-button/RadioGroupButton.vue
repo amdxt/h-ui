@@ -4,10 +4,12 @@
             v-for="(item, index) in config.options"
             :key="index"
             :title="item.disabledTitle"
-            class="radio-item"
             :class="[
                 $huiGetNsE('item'),
                 getItemStyle(item.id, index, item.disabled),
+                {
+                    [$huiGetNsState('disabled')]: item.disabled === true,
+                },
             ]"
             :style="{ height: height + 'px' }"
             @click="handleDateChange(item)"
@@ -58,10 +60,9 @@ export default {
         },
         getItemStyle(id, index, disabled) {
             if (disabled) {
-                return [' disabled', this.$huiGetNsEM('item', 'disabled')]
+                return [this.$huiGetNsEM('item', 'disabled')]
             } else if (this.config.value === id && index === 0) {
                 return [
-                    'radio-item-on radio-item-on-first',
                     this.$huiGetNsEM('item', 'on'),
                     this.$huiGetNsEM('item', 'on-first'),
                 ]
@@ -70,12 +71,11 @@ export default {
                 index === this.config.options.length - 1
             ) {
                 return [
-                    'radio-item-on radio-item-on-last',
                     this.$huiGetNsEM('item', 'on'),
                     this.$huiGetNsEM('item', 'on-last'),
                 ]
             } else if (this.config.value === id) {
-                return ['radio-item-on', this.$huiGetNsEM('item', 'on')]
+                return [this.$huiGetNsEM('item', 'on')]
             } else {
                 return ''
             }
@@ -83,54 +83,3 @@ export default {
     },
 }
 </script>
-
-<style lang="scss" scoped>
-$G4: #e1e1e1;
-$G9: #313233;
-$main-color: #3b6cff;
-
-.radio-box {
-    display: flex;
-    border: 1px solid $G4;
-    border-radius: 2px;
-    .radio-item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        box-sizing: content-box;
-        color: $G9;
-        font-size: 13px;
-        padding: 0 10px;
-        border-right: 1px solid $G4;
-        cursor: pointer;
-        &:last-child {
-            border-right: none;
-        }
-    }
-    .radio-item-on {
-        color: $main-color;
-        font-weight: 500;
-        &::after {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            border: 1px solid $main-color;
-        }
-    }
-    .disabled {
-        cursor: not-allowed;
-        background: rgb(242, 242, 242);
-    }
-    .radio-item-on-first::after {
-        border-radius: 2px 0px 0px 2px;
-    }
-    .radio-item-on-last::after {
-        border-radius: 0px 2px 2px 0px;
-    }
-}
-</style>

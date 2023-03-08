@@ -20,6 +20,7 @@ export default {
                     {
                         id: 2,
                         name: 'aliexpress',
+                        disabled: true,
                     },
                     {
                         id: 3,

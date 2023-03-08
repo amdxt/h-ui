@@ -1,7 +1,7 @@
 import { configProviderContextKey } from '@my-h-ui/tokens'
 import { kebabCase } from 'lodash'
 
-const statePrefix = 'is_'
+const statePrefix = 'is-'
 const defaultNamespace = 'h'
 
 const _bem = (namespace, block, blockSuffix, element, modifier) => {
@@ -108,7 +108,7 @@ export const nsMixin = {
                 modifier
             )
         },
-        $huiGetNsState(name, state) {
+        $huiGetNsState(name, state = true) {
             return name && state ? `${statePrefix}${name}` : ''
         },
     },
