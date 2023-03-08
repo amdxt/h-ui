@@ -3,14 +3,9 @@ import Button from './button'
 import SFCButton from './SFCButton/SFCButton.vue'
 import JSXButton from './jsx-button'
 import HUI from './entry'
+import AppComp from './App.vue'
 
-const app = createApp({
-    template: `
-        <HButton color="red" icon="search">red</HButton>
-        <HButton color="green" icon="edit">green</HButton>
-        <HButton color="yellow" icon="check">black</HButton>
-    `,
-})
+const app = createApp(AppComp)
 app.use(HUI)
 
 app.mount('#app')

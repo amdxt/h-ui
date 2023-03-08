@@ -1,11 +1,14 @@
 <template>
-    <div class="radio-box">
+    <div class="radio-box" :class="[$huiGetNs()]">
         <div
             v-for="(item, index) in config.options"
             :key="index"
             :title="item.disabledTitle"
             class="radio-item"
-            :class="getItemStyle(item.id, index, item.disabled)"
+            :class="[
+                $huiGetNsE('item'),
+                getItemStyle(item.id, index, item.disabled),
+            ]"
             :style="{ height: height + 'px' }"
             @click="handleDateChange(item)"
         >
@@ -17,7 +20,9 @@
 
 <script>
 // eslint-disable vue/no-mutating-props
+import { nsMixin } from '@my-h-ui/mixins'
 export default {
+    mixins: [nsMixin],
     name: 'RadioGroupButton',
     props: {
         config: {
@@ -53,16 +58,24 @@ export default {
         },
         getItemStyle(id, index, disabled) {
             if (disabled) {
-                return ' disabled'
+                return [' disabled', this.$huiGetNsEM('item', 'disabled')]
             } else if (this.config.value === id && index === 0) {
-                return 'radio-item-on radio-item-on-first'
+                return [
+                    'radio-item-on radio-item-on-first',
+                    this.$huiGetNsEM('item', 'on'),
+                    this.$huiGetNsEM('item', 'on-first'),
+                ]
             } else if (
                 this.config.value === id &&
                 index === this.config.options.length - 1
             ) {
-                return 'radio-item-on radio-item-on-last'
+                return [
+                    'radio-item-on radio-item-on-last',
+                    this.$huiGetNsEM('item', 'on'),
+                    this.$huiGetNsEM('item', 'on-last'),
+                ]
             } else if (this.config.value === id) {
-                return 'radio-item-on'
+                return ['radio-item-on', this.$huiGetNsEM('item', 'on')]
             } else {
                 return ''
             }
