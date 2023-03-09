@@ -1,18 +1,16 @@
 <template>
-    <div class="radio-box" :class="[$huiGetNs()]">
+    <div :class="[$huiGetNs()]">
         <div
-            v-for="(item, index) in config.options"
+            v-for="(item, index) in options"
             :key="index"
             :title="item.disabledTitle"
             :class="[
                 $huiGetNsE('item'),
+                $huiGetNsEM('item', this.size),
                 getItemStyle(item.id, index, item.disabled),
-                {
-                    [$huiGetNsState('disabled')]: item.disabled === true,
-                },
             ]"
-            :style="{ height: height + 'px' }"
-            @click="handleDateChange(item)"
+            :style="styleObj"
+            @click="handleChange(item)"
         >
             <component v-if="item.slot" :is="item.slot" />
             <span v-else>{{ item.name }}</span>
@@ -26,55 +24,63 @@ import { nsMixin } from '@my-h-ui/mixins'
 export default {
     mixins: [nsMixin],
     name: 'RadioGroupButton',
+    emits: ['change'],
     props: {
-        config: {
-            type: Object,
+        value: [String, Number],
+        options: {
+            type: Array,
             default() {
-                return {}
+                return []
             },
+        },
+        size: {
+            type: String,
+            default: 'md', // sm md lg xl
         },
         height: {
             type: Number,
-            default: 30,
         },
-        setTraceTitle: String, // 自动埋点上报的名称
     },
     data() {
         return {
             newValue: '',
         }
     },
-    methods: {
-        handleDateChange({ id, disabled, name }) {
-            if (disabled) return
-            if (id !== this.config.value) {
-                // eslint-disable-next-line vue/no-mutating-props
-                this.config.value = id
-                this.$emit('change')
+    computed: {
+        styleObj() {
+            const ret = {}
+
+            if (this.height) {
+                ret.height = this.height + 'px'
             }
-            if (this.setTraceTitle) {
-                this.$sensors.setWebClick({
-                    name: `${this.setTraceTitle}-${name}`,
-                })
+
+            return ret
+        },
+    },
+    methods: {
+        handleChange(item = {}) {
+            const { id, disabled } = item
+            if (disabled) return
+            if (id !== this.value) {
+                this.$emit('change', id, item)
             }
         },
         getItemStyle(id, index, disabled) {
             if (disabled) {
-                return [this.$huiGetNsEM('item', 'disabled')]
-            } else if (this.config.value === id && index === 0) {
+                return [this.$huiGetNsState('disabled')]
+            }
+
+            if (this.value === id && index === 0) {
                 return [
                     this.$huiGetNsEM('item', 'on'),
                     this.$huiGetNsEM('item', 'on-first'),
                 ]
-            } else if (
-                this.config.value === id &&
-                index === this.config.options.length - 1
-            ) {
+            } else if (this.value === id && index === this.options.length - 1) {
                 return [
                     this.$huiGetNsEM('item', 'on'),
                     this.$huiGetNsEM('item', 'on-last'),
                 ]
-            } else if (this.config.value === id) {
+            } else if (this.value === id) {
                 return [this.$huiGetNsEM('item', 'on')]
             } else {
                 return ''

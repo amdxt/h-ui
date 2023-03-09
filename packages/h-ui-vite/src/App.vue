@@ -2,7 +2,11 @@
     <div>
         <div>App</div>
         <div style="display: inline-block">
-            <RadioGroupButton :config="config"></RadioGroupButton>
+            <RadioGroupButton
+                :value="config.value"
+                :options="config.options"
+                @change="(e) => (config.value = e)"
+            ></RadioGroupButton>
         </div>
     </div>
 </template>

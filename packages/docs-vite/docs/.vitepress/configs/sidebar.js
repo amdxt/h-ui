@@ -9,6 +9,10 @@ export const sidebar = {
         text: '组件',
         items: [
           {
+            text: 'radio-group-button',
+            link: '/components/radio-group-button/',
+          },
+          {
             text: 'Tabs',
             link: '/components/tabs/',
           },

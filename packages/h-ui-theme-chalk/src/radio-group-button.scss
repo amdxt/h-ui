@@ -33,6 +33,15 @@ $main-color: #3b6cff;
           color: $main-color;
         }
 
+        // todo 待优化, 应该用变量来控制 component-size: sm md lg xl
+        @include m('md') {
+            height: 32px;
+        }
+
+        @include m('sm') {
+            height: 26px;
+        }
+
         @include when('disabled') {
           cursor: not-allowed;
           background: rgb(242, 242, 242);
@@ -43,6 +52,7 @@ $main-color: #3b6cff;
             color: $main-color;
             font-weight: 500;
             &::after {
+                box-sizing: content-box; // 为了兼容 scb-front
                 content: '';
                 position: absolute;
                 top: -1px;
