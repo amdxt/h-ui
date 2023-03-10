@@ -20,7 +20,7 @@
 
 <script lang="js">
 // eslint-disable vue/no-mutating-props
-import { nsMixin } from '@my-h-ui/mixins'
+import { nsMixin } from './../../mixins'
 export default {
     mixins: [nsMixin],
     name: 'RadioGroupButton',

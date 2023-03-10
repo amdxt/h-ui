@@ -1,4 +1,4 @@
-import { configProviderContextKey } from '@my-h-ui/tokens'
+import { configProviderContextKey } from '../tokens'
 import { kebabCase } from 'lodash'
 
 const statePrefix = 'is-'

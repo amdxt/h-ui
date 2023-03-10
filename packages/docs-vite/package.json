@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "pnpm run register:components && vitepress dev docs",
-    "docs:build": "pnpm run register:components && pnpm run highlight:build && vitepress build docs",
-    "docs:serve": "vitepress serve docs",
+    "dev": "pnpm run register:components && vitepress dev docs",
+    "build": "pnpm run register:components && pnpm run highlight:build && vitepress build docs",
+    "serve": "vitepress serve docs",
     "register:components": "vitepress-rc",
     "highlight:build": "h-ui-cli compile"
   },

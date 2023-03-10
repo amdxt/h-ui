@@ -55,7 +55,7 @@ const buildSplit = async () => {
     // return
     // 各个组件分别打包
     console.log('===build:split===')
-    const srcDir = path.resolve(__dirname, '../src/')
+    const srcDir = path.resolve(__dirname, '../src/components')
     const componentsDir = fs.readdirSync(srcDir).filter((name: string) => {
         const componentDir = path.resolve(srcDir, name)
         const isDir = fs.lstatSync(componentDir).isDirectory()
@@ -74,6 +74,7 @@ const buildSplit = async () => {
             lib: {
                 entry: path.resolve(srcDir, name, 'index.ts'),
                 name, // 导出模块名
+                fileName: (format: string) => `index.${format}.js`,
             },
         }
 

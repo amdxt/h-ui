@@ -1,10 +1,10 @@
 import { createApp, App } from 'vue'
-import Button from './button'
-import JSXButton from './jsx-button'
-import SFCButton from './sfc-button'
-import Tabs from './tabs'
-import RadioGroupButton from './radio-group-button'
-import ColorBlock from './color-block'
+import Button from './components/button'
+import JSXButton from './components/jsx-button'
+import SFCButton from './components/sfc-button'
+import Tabs from './components/tabs'
+import RadioGroupButton from './components/radio-group-button'
+import ColorBlock from './components/color-block'
 
 // 全量导出
 export default {

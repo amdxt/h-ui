@@ -3,7 +3,7 @@
 })(this, function(exports2, vue) {
   "use strict";
   var __vite_style__ = document.createElement("style");
-  __vite_style__.textContent = ".tab[data-v-433d6d15] {\n  font-weight: 600;\n  color: #313233;\n  display: inline-block;\n  vertical-align: top;\n  margin: 0 24px 0;\n  text-align: center;\n  cursor: pointer;\n}\n.tab.active[data-v-433d6d15] {\n  color: #3b6cff;\n  border-bottom: 2px solid #3b6cff;\n}";
+  __vite_style__.textContent = ".tab[data-v-f14ae5eb] {\n  font-weight: 600;\n  color: #313233;\n  display: inline-block;\n  vertical-align: top;\n  margin: 0 24px 0;\n  text-align: center;\n  cursor: pointer;\n}\n.tab.active[data-v-f14ae5eb] {\n  color: #3b6cff;\n  border-bottom: 2px solid #3b6cff;\n}";
   document.head.appendChild(__vite_style__);
   const props = {
     color: {
@@ -112,7 +112,7 @@
       }
     }
   };
-  const Tabs_vue_vue_type_style_index_0_scoped_433d6d15_lang = "";
+  const Tabs_vue_vue_type_style_index_0_scoped_f14ae5eb_lang = "";
   const _hoisted_1$1 = ["name", "onClick"];
   const _hoisted_2$1 = {
     key: 0,
@@ -134,7 +134,7 @@
       }), 128))
     ]);
   }
-  const Tabs = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["__scopeId", "data-v-433d6d15"]]);
+  const Tabs = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["__scopeId", "data-v-f14ae5eb"]]);
   Tabs.install = (app) => {
     app.component(Tabs.name, Tabs);
   };

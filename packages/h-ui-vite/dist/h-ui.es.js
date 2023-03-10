@@ -106,7 +106,7 @@ const _sfc_main$2 = {
     }
   }
 };
-const Tabs_vue_vue_type_style_index_0_scoped_433d6d15_lang = "";
+const Tabs_vue_vue_type_style_index_0_scoped_f14ae5eb_lang = "";
 const _hoisted_1$1 = ["name", "onClick"];
 const _hoisted_2$1 = {
   key: 0,
@@ -128,7 +128,7 @@ function _sfc_render$2(_ctx, _cache) {
     }), 128))
   ]);
 }
-const Tabs = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["__scopeId", "data-v-433d6d15"]]);
+const Tabs = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["__scopeId", "data-v-f14ae5eb"]]);
 Tabs.install = (app) => {
   app.component(Tabs.name, Tabs);
 };
