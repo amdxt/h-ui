@@ -1,4 +1,4 @@
-import { createApp, App } from 'vue'
+import { App } from 'vue'
 import Button from './components/button'
 import JSXButton from './components/jsx-button'
 import SFCButton from './components/sfc-button'

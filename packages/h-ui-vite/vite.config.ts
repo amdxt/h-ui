@@ -3,7 +3,6 @@
 import { defineConfig, UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vue2 from '@vitejs/plugin-vue2'
-import { createVuePlugin as vue2Community } from 'vite-plugin-vue2'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import legacy from '@vitejs/plugin-legacy'
 import dts from 'vite-plugin-dts'
@@ -28,11 +27,15 @@ export const config: UserConfig = {
             //     find: 'vue',
             //     replacement: 'vue/dist/vue.esm-bundler',
             // },
+            // 打包 vue2
+            // {
+            //     find: 'vue',
+            //     replacement: 'vue2',
+            // },
         ],
     },
     plugins: [
         vue(),
-        // vue2(),
         // vue2Community(),
         vueJsx({}),
         // unocss(),

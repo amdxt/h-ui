@@ -1,8 +1,8 @@
 {
   "name": "@my-h-ui/theme-chalk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite build --watch",

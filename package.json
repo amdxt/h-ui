@@ -56,7 +56,8 @@
         "vite-plugin-dts": "^1.7.3",
         "vitepress": "1.0.0-alpha.47",
         "vitepress-theme-demoblock": "^2.0.2",
-        "vitest": "^0.28.3"
+        "vitest": "^0.28.3",
+        "vue2": "npm:vue@2.6.11"
     },
     "dependencies": {
         "@commitlint/cli": "17.0.2",

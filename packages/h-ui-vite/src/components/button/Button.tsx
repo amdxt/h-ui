@@ -1,4 +1,4 @@
-import { defineComponent, h, PropType } from 'vue'
+import { h, PropType } from 'vue'
 
 export type IColor =
     | 'black'
@@ -21,7 +21,7 @@ export const props = {
     },
 }
 
-export default defineComponent({
+export default {
     name: 'HButton',
     props,
     setup(props, { slots }) {
@@ -51,4 +51,4 @@ export default defineComponent({
             </button>
         )
     },
-})
+}

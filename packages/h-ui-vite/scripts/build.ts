@@ -3,7 +3,6 @@ console.log('====start to build:all =====')
 
 import * as fs from 'fs-extra'
 import * as path from 'path'
-import { config } from '../vite.config'
 import {
     build,
     InlineConfig,
@@ -11,8 +10,16 @@ import {
     UserConfig,
     mergeConfig,
 } from 'vite'
-import { merge } from 'lodash'
+// import { createVuePlugin as vue2Community } from 'vite-plugin-vue2'
+import { merge, cloneDeep } from 'lodash'
+
 import { generateDTS } from './type'
+import { config } from '../vite.config'
+
+const repoRootNodeModules = path.resolve(__dirname, '../../../node_modules')
+const repoRootNodeModulesVue = path.resolve(repoRootNodeModules, 'vue')
+const repoRootNodeModulesVue2 = path.resolve(repoRootNodeModules, 'vue2')
+const repoRootNodeModulesVueBak = path.resolve(repoRootNodeModules, 'vue-bak')
 
 const configBase: InlineConfig = {
     configFile: false,
@@ -23,11 +30,56 @@ const configFinal: InlineConfig = mergeConfig(configBase, config, true)
 
 const buildEntry = async () => {
     // 全量打包 build:entry
+    console.log('=== buildEntry ===')
     await build(configFinal)
     // await build()
 }
 
+const buildEntryV2 = async () => {
+    // fs.copySync(repoRootNodeModulesVue, '/Users/ligfee/tmp/vue-bak')
+    // 切换 node_modules vue 版本
+    // rm vue-bak
+    console.log('=== buildEntryV2 ===')
+    console.log('切换 vue 版本')
+    fs.removeSync(repoRootNodeModulesVueBak)
+    // vue -> vue-bak
+    console.log(`${repoRootNodeModulesVue} -> ${repoRootNodeModulesVueBak}`)
+    fs.copySync(repoRootNodeModulesVue, repoRootNodeModulesVueBak)
+    // rm vue
+    fs.removeSync(repoRootNodeModulesVue)
+    // vue2 -> vue
+    console.log(`${repoRootNodeModulesVue2} -> ${repoRootNodeModulesVue}`)
+    fs.copySync(repoRootNodeModulesVue2, repoRootNodeModulesVue)
+
+    try {
+        const curConfigFinal = cloneDeep(configFinal)
+
+        // replace plugins
+        const vue2Community = require('vite-plugin-vue2').createVuePlugin
+        curConfigFinal.plugins = [vue2Community()]
+        // replace outDir
+        const outDir = path.resolve(
+            curConfigFinal!.build!.outDir as string,
+            'v2'
+        )
+        curConfigFinal!.build!.outDir = outDir
+        await build(curConfigFinal)
+    } catch (error) {
+        console.error(error)
+    } finally {
+        // node_modules 文件还原
+        // rm vue
+        fs.removeSync(repoRootNodeModulesVue)
+        // vue-bak -> vue
+        console.log(
+            `还原 vue 版本: ${repoRootNodeModulesVueBak} -> ${repoRootNodeModulesVue}`
+        )
+        fs.copySync(repoRootNodeModulesVueBak, repoRootNodeModulesVue)
+    }
+}
+
 const buildSplit = async () => {
+    console.log('=== buildSplit ===')
     // const inline: InlineConfig =
     //   viteConfig;
     const baseOutDir = config!.build!.outDir as string
@@ -111,6 +163,7 @@ const genDTS = async () => {
 const buildAll = async () => {
     await buildEntry()
     await buildSplit()
+    await buildEntryV2()
     // await genDTS()
 }
 

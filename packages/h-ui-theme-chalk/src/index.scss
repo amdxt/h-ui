@@ -1,3 +1,3 @@
-@use './button.scss';
-@use './radio-group-button.scss';
-@use './color-block.scss'
+@use './button.scss' as *;
+@use './radio-group-button.scss' as *;
+@use './color-block.scss' as *
