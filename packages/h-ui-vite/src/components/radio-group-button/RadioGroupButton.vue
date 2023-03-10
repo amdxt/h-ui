@@ -6,7 +6,7 @@
             :title="item.disabledTitle"
             :class="[
                 $huiGetNsE('item'),
-                $huiGetNsEM('item', this.size),
+                $huiGetNsEM('item', size),
                 getItemStyle(item.id, index, item.disabled),
             ]"
             :style="styleObj"

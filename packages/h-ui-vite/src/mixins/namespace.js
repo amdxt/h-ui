@@ -1,5 +1,5 @@
 import { configProviderContextKey } from '../tokens'
-import { kebabCase } from 'lodash'
+import kebabCase from 'lodash/kebabCase'
 
 const statePrefix = 'is-'
 const defaultNamespace = 'h'

@@ -214,6 +214,15 @@
               }
             },
             {
+              "name": "size",
+              "description": "尺寸",
+              "default": "md",
+              "value": {
+                "type": "sm | md",
+                "kind": "expression"
+              }
+            },
+            {
               "name": "height",
               "description": "自定义高度",
               "default": "30px",
