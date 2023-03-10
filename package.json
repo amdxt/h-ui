@@ -61,12 +61,8 @@
     "dependencies": {
         "@commitlint/cli": "17.0.2",
         "@commitlint/config-conventional": "17.0.2",
-        "@my-h-ui/constants": "workspace:*",
-        "@my-h-ui/directives": "workspace:^0.0.5",
         "@my-h-ui/h-ui": "workspace:^1.0.9",
-        "@my-h-ui/mixins": "workspace:*",
         "@my-h-ui/theme-chalk": "workspace:^1.0.0",
-        "@my-h-ui/tokens": "workspace:^0.0.5",
         "@my-h-ui/utils": "workspace:*",
         "@vitejs/plugin-vue2": "^2.2.0",
         "lodash": "^4.17.21",
