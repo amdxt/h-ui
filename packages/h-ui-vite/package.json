@@ -7,6 +7,7 @@
     "types": "./dist/h-ui.d.ts",
     "scripts": {
         "build": "pnpm run build:all",
+        "build:cmd": "vite build",
         "build:all": "esno ./scripts/build.ts",
         "build:entry": "vite build",
         "build:split": "echo \"111\"",

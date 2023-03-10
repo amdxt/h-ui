@@ -68,6 +68,7 @@
         "@my-h-ui/theme-chalk": "workspace:^1.0.0",
         "@my-h-ui/tokens": "workspace:^0.0.5",
         "@my-h-ui/utils": "workspace:*",
+        "@vitejs/plugin-vue2": "^2.2.0",
         "lodash": "^4.17.21",
         "sass": "^1.58.1",
         "vue": "^3.2.44"

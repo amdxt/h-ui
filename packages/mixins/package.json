@@ -2,5 +2,9 @@
   "name": "@my-h-ui/mixins",
   "private": true,
   "license": "MIT",
-  "main": "index.js"
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.com"
+  }
 }

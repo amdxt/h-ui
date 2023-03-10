@@ -6,17 +6,14 @@ import Tabs from './tabs'
 import RadioGroupButton from './radio-group-button'
 import ColorBlock from './color-block'
 
-// 单独导出
-export { Button, JSXButton, SFCButton }
-
 // 全量导出
 export default {
     install(app: App): void {
         app.component(Button.name, Button)
         app.component(JSXButton.name, JSXButton)
         app.component(SFCButton.name, SFCButton)
+        app.component(ColorBlock.name, ColorBlock)
         app.component(Tabs.name, Tabs)
         app.component(RadioGroupButton.name, RadioGroupButton)
-        app.component(ColorBlock.name, ColorBlock)
     },
 }

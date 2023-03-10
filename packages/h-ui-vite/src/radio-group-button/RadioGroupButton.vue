@@ -18,7 +18,7 @@
     </div>
 </template>
 
-<script>
+<script lang="js">
 // eslint-disable vue/no-mutating-props
 import { nsMixin } from '@my-h-ui/mixins'
 export default {

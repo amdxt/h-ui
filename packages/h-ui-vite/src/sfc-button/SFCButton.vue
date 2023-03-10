@@ -2,7 +2,7 @@
     <span>sfc button</span>
 </template>
 
-<script>
+<script lang="js">
 export default {
     name: 'HSFCButton',
 }

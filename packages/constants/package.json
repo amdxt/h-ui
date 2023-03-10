@@ -1,6 +1,10 @@
 {
-  "name": "@my-h-ui/constants",
-  "private": true,
-  "license": "MIT",
-  "main": "index.ts"
+    "name": "@my-h-ui/constants",
+    "private": true,
+    "license": "MIT",
+    "main": "index.ts",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.com"
+    }
 }

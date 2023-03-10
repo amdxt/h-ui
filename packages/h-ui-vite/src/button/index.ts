@@ -1,4 +1,4 @@
-import 'uno.css'
+// import 'uno.css'
 
 import Button from './Button'
 import { App } from 'vue'
